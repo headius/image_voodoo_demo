@@ -1,0 +1,5 @@
+require 'image_voodoo/demo'
+
+filename = ARGV[0]
+
+ImageVoodoo::Demo.output_demo_files(filename)
