@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    image_voodoo (0.9.3)
+
+PLATFORMS
+  universal-java-21
+
+DEPENDENCIES
+  image_voodoo
+
+BUNDLED WITH
+   2.6.9
