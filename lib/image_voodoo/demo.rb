@@ -8,14 +8,16 @@ class ImageVoodoo
     def self.output_demo_files(filename)
       ImageVoodoo.with_image(filename) do |img|
         basename = File.basename(filename, ".*")
-        img.cropped_thumbnail(100) { |img2| img2.save "#{basename}_cropped_thumb.jpg" }
-        img.with_crop(100, 200, 400, 600) { |img2| img2.save "#{basename}_cropped.jpg" }
-        img.thumbnail(50) { |img2| img2.save "#{basename}_thumb.jpg" }
+        Dir.mkdir(basename) unless Dir.exist?(basename)
+        img.cropped_thumbnail(100) { |img2| img2.save "#{basename}/cropped_thumb.jpg" }
+        img.with_crop(100, 200, 400, 600) { |img2| img2.save "#{basename}/cropped.jpg" }
+        img.thumbnail(50) { |img2| img2.save "#{basename}/thumb.jpg" }
         img.resize(100, 150) do |img2|
-          img2.save "#{basename}_resized.jpg"
-          img2.save "#{basename}_resized.png"
+          img2.save "#{basename}/resized.jpg"
+          img2.save "#{basename}/resized.png"
         end
-        img.quality(0.75).save("reduced.jpg")
+        img.quality(0.75).save("#{basename}/reduced.jpg")
+        puts "wrote demo files to #{Dir.pwd}/#{basename}/"
       end
     end
   end
