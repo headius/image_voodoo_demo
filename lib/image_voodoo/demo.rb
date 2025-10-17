@@ -16,6 +16,7 @@ class ImageVoodoo
           img2.save "#{basename}/resized.jpg"
           img2.save "#{basename}/resized.png"
         end
+        img.add_border(width: 20, color: "FF0000").save("#{basename}/border.jpg")
         img.quality(0.75).save("#{basename}/reduced.jpg")
         puts "wrote demo files to #{Dir.pwd}/#{basename}/"
       end
