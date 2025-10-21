@@ -7,6 +7,7 @@ Gem::Specification.new do |spec|
   spec.version = ImageVoodooDemo::VERSION
   spec.authors = ["Charles Oliver Nutter"]
   spec.email = ["headius@headius.com"]
+  spec.license = "MIT"
 
   spec.summary = "A simple demo of the image_voodoo gem."
   spec.homepage = "https://github.com/headius/image_voodoo_demo"
